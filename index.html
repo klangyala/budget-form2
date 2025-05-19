@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ติดตามการบริหารจัดการงบประมาณ</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background: #fdf6f0;
+      color: #333;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    h1 {
+      text-align: center;
+      color: #b48b7d;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      color: #555;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      background: #fff7f2;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 1rem;
+      width: 100%;
+      background: #f7b2ad;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #f48c8c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ติดตามการบริหารจัดการงบประมาณ</h1>
+    <form id="budgetForm">
+      <label>รหัสหน่วยเบิกจ่าย
+        <input type="number" name="entry.941430804" required>
+      </label>
+      <label>หน่วยงาน
+        <input type="text" name="entry.597411887" required>
+      </label>
+      <label>งบลงทุนที่ได้รับรับจัดสรรทั้งหมด ล้านบาท
+        <input type="text" name="entry.711134893">
+      </label>
+      <label>ประเภทงบประมาณรายจ่ายงบลงทุนที่ได้รับจัดสรร
+        <select name="entry.1328322735">
+          <option value="งานก่อสร้าง">งานก่อสร้าง</option>
+          <option value="งานจัดหาครุภัณฑ์">งานจัดหาครุภัณฑ์</option>
+          <option value="งานก่อสร้างและงานจัดหาครุภัณฑ์">งานก่อสร้างและงานจัดหาครุภัณฑ์</option>
+        </select>
+      </label>
+      <label>จำนวนโครงการงานก่อสร้าง
+        <input type="number" name="entry.1508672613">
+      </label>
+      <label>วงเงินรวมโครงการงานก่อสร้าง ล้านบาท
+        <input type="text" name="entry.15483049">
+      </label>
+      <label>จำนวนโครงการงานก่อสร้างที่อยู่ระหว่างดำเนินการจัดซื้อจัดจ้าง
+        <input type="number" name="entry.879467589">
+      </label>
+      <label>วงเงินรวมโครงการก่อสร้างที่อยู่ระหว่างดำเนินการจัดซื้อจัดจ้าง ล้านบาท
+        <input type="text" name="entry.274756393">
+      </label>
+      <label>จำนวนโครงการงานก่อสร้างที่รอลงนามหรือลงนามในสัญญาแล้ว
+        <input type="number" name="entry.1937476450">
+      </label>
+      <label>วงเงินรวมโครงการงานก่อสร้างที่รอลงนามหรือลงนามในสัญญาแล้ว ล้านบาท
+        <input type="text" name="entry.966306627">
+      </label>
+      <label>จำนวนโครงการจัดหาครุภัณฑ์
+        <input type="number" name="entry.2131034311">
+      </label>
+      <label>วงเงินรวมโครงการจัดหาครุภัณฑ์ ล้านบาท
+        <input type="number" name="entry.1588987299">
+      </label>
+      <label>จำนวนโครงการจัดหาครุภัณฑ์ที่อยู่ระหว่างดำเนินการจัดซื้อจัดจ้าง
+        <input type="number" name="entry.980511874">
+      </label>
+      <label>วงเงินรวมโครงการจัดหาครุภัณฑ์ที่อยู่ระหว่างดำเนินการจัดซื้อจัดจ้าง ล้านบาท
+        <input type="text" name="entry.2496321">
+      </label>
+      <label>จำนวนโครงการจัดหาครุภัณฑ์ที่รอลงนามหรือลงนามในสัญญาแล้ว
+        <input type="number" name="entry.39365347">
+      </label>
+      <label>วงเงินรวมโครงการจัดหาครุภัณฑ์ที่รอลงนามหรือลงนามในสัญญาแล้ว ล้านบาท
+        <input type="text" name="entry.782048339">
+      </label>
+      <label>เจ้าหน้าที่ผู้รับผิดชอบ
+        <input type="text" name="entry.1406206701">
+      </label>
+      <label>หมายเลขโทรศัพท์ ที่ติดต่อได้โดยตรง
+        <input type="tel" name="entry.422204499">
+      </label>
+      <button type="submit">ส่งข้อมูล</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('budgetForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const query = new URLSearchParams(data).toString();
+      fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeRWkdHnZpv9u9QlaFn9MZwEZNKap8Kg9H7npmtJR_J_zc3IQ/formResponse`, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: query,
+      }).then(() => {
+        alert('ส่งข้อมูลเรียบร้อยแล้ว ✅');
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>
